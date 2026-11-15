@@ -1,0 +1,11 @@
+# dsh-minimax-video bundle patch —— 把 MiniMax 视频生成挂进 profile 树。
+#
+# 作用：注册三个工具（提交 / 查询下载 / 查余额），让模型能直接生成视频。
+#
+# 凭据：读 JetHub 账号池（$DSH_HOME/jet-hub/state.json + .credentials.yaml），
+# **只读**，不写入、不改 JetHub 的续期逻辑。
+#
+# 生命周期：随 DSH 启停，不注册服务、不写计划任务、不开端口。
+- insert:
+    - id: minimax-video
+      name: dsh-minimax-video

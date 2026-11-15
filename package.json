@@ -1,0 +1,34 @@
+{
+  "name": "dsh-minimax-video",
+  "version": "1.1.0",
+  "private": true,
+  "description": "把 MiniMax Code 的视频生成（H3 / H3-Max / Hailuo-2.3）接入 DSH：复用 JetHub 账号池的登录态，消耗签到积分，无需付费 API Key。异步三段式（提交 / 查询 / 下载），随 DSH 启停，无常驻进程。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src/core.mjs",
+    "cordis.patch.yml",
+    "install.mjs",
+    "README.md",
+    "test/"
+  ],
+  "scripts": {
+    "test": "node test/offline.test.mjs && node test/schema.test.mjs",
+    "test:e2e": "node test/e2e-probe.mjs",
+    "install:plugin": "node install.mjs"
+  },
+  "engines": {
+    "node": ">=22.19"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}
